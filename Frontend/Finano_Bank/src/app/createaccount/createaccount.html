@@ -1,0 +1,251 @@
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <div class="logo-icon">H</div>
+                Haven
+            </a>
+            <a href="#" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 19-7-7 7-7"/>
+                    <path d="M19 12H5"/>
+                </svg>
+                Back to Home
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content container">
+    <!-- Account Creation Form -->
+    <section class="form-section">
+        <div class="form-header">
+            <h1>Create Account</h1>
+            <p>Join thousands of satisfied customers who trust Haven with their financial future</p>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+            <div class="progress-line"></div>
+            <div class="step active" data-step="1">1</div>
+            <div class="step" data-step="2">2</div>
+            <div class="step" data-step="3">3</div>
+        </div>
+
+        <form id="accountForm">
+            <!-- Step 1: Account Type -->
+            <div class="form-step active" data-step="1">
+                <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">Choose Account Type</h2>
+                <div class="account-types">
+                    <div class="account-type" data-type="personal">
+                        <h3>Personal Banking</h3>
+                        <p>Perfect for individual banking needs with competitive rates and premium features</p>
+                        <div class="features">
+                            <span class="feature-tag">Free ATM Access</span>
+                            <span class="feature-tag">Mobile Banking</span>
+                            <span class="feature-tag">24/7 Support</span>
+                        </div>
+                    </div>
+                    <div class="account-type" data-type="business">
+                        <h3>Business Banking</h3>
+                        <p>Comprehensive business solutions with advanced features for growing companies</p>
+                        <div class="features">
+                            <span class="feature-tag">Business Tools</span>
+                            <span class="feature-tag">Merchant Services</span>
+                            <span class="feature-tag">Dedicated Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Personal Information -->
+            <div class="form-step" data-step="2">
+                <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">Personal Information</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="dob">Date of Birth</label>
+                        <input type="date" id="dob" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="address">Street Address</label>
+                    <input type="text" id="address" class="form-input" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="city">City</label>
+                        <input type="text" id="city" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="state">State</label>
+                        <select id="state" class="form-input form-select" required>
+                            <option value="">Select State</option>
+                            <option value="CA">California</option>
+                            <option value="NY">New York</option>
+                            <option value="TX">Texas</option>
+                            <option value="FL">Florida</option>
+                            <!-- Add more states as needed -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="ssn">Social Security Number</label>
+                    <input type="password" id="ssn" class="form-input" placeholder="XXX-XX-XXXX" required>
+                </div>
+            </div>
+
+            <!-- Step 3: Security & Verification -->
+            <div class="form-step" data-step="3">
+                <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">Security & Verification</h2>
+                
+                <div class="form-group">
+                    <label class="form-label" for="password">Create Password</label>
+                    <input type="password" id="password" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="securityQuestion">Security Question</label>
+                    <select id="securityQuestion" class="form-input form-select" required>
+                        <option value="">Select a question</option>
+                        <option value="pet">What was your first pet's name?</option>
+                        <option value="school">What elementary school did you attend?</option>
+                        <option value="city">In what city were you born?</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="securityAnswer">Security Answer</label>
+                    <input type="text" id="securityAnswer" class="form-input" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" class="checkbox" required>
+                    <label for="terms" class="checkbox-label">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="marketing" class="checkbox">
+                    <label for="marketing" class="checkbox-label">
+                        I would like to receive marketing communications and product updates
+                    </label>
+                </div>
+            </div>
+
+            <!-- Success State -->
+            <div class="success-state" data-step="success">
+                <div class="success-icon">✓</div>
+                <h2>Account Created Successfully!</h2>
+                <p>Welcome to Haven Banking! Your account has been created and is being processed. You'll receive a confirmation email shortly.</p>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='#'">
+                        Go to Dashboard
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions" id="formActions">
+                <button type="button" class="btn btn-secondary" id="prevBtn" onclick="previousStep()" style="display: none;">
+                    Previous
+                </button>
+                <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()">
+                    Next Step
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="info-header">
+            <h2>Why Choose Haven?</h2>
+            <p>Join over 1.3 million customers who trust Haven for their banking needs</p>
+        </div>
+
+        <ul class="benefits-list">
+            <li class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <div class="benefit-content">
+                    <h3>Bank-Level Security</h3>
+                    <p>256-bit encryption and multi-factor authentication</p>
+                </div>
+            </li>
+            <li class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <div class="benefit-content">
+                    <h3>No Hidden Fees</h3>
+                    <p>Transparent pricing with no surprise charges</p>
+                </div>
+            </li>
+            <li class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12,6 12,12 16,14"/>
+                    </svg>
+                </div>
+                <div class="benefit-content">
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service and assistance</p>
+                </div>
+            </li>
+            <li class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="benefit-content">
+                    <h3>Digital-First Banking</h3>
+                    <p>Modern mobile and web banking experience</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="security-badge">
+            <h4>🔒 FDIC Insured</h4>
+            <p>Your deposits are protected up to $250,000</p>
+        </div>
+    </section>
