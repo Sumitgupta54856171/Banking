@@ -1,104 +1,43 @@
 package com.example.demo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.UUID;
+
 @Entity
-@Table( name = "account")
-class Account {
-
-
+@Table(name="Account")
+@Getter
+@Setter
+@NoArgsConstructor
+public class Account {
     @Id
-    @UuidGenerator
-    @GeneratedValue
-    private String id;
-    @Column(unique = true,nullable=false)
-    private String username;
-    @Column(nullable=false)
-    private String password;
-    @Column(nullable=false)
-    private String email;
-    @Column(nullable=false)
-    private String phone;
-    @Column(nullable=false,unique=false)
-    private String adharnumber;
-    @Column(nullable=false)
-    private String address;
-    @Column(nullable=false)
-    private String role;
-    @Column(nullable=false,columnDefinition="ENUM('CURRENT','SAVINGS')")
+    @GeneratedValue// For Hibernate 6+
+    private Long id;
+    @Column(nullable = false,unique = true)
+     private Long accountnumber;
+    @Column(nullable = false,unique = true)
+    private Long crn;
+    @Column(nullable = false)
     private String accounttype;
-    public String getId() {
-        return id;
-    }
+    @Column(nullable = false)
+    private String accountname;
+    @Column(nullable = false)
+    private String accountstatus;
+    private Long accountbalance;
+    @Column(nullable = false)
+    private String accountcurrency;
+    @Transient
+    @JsonProperty("user_id")
+    private Long user_id;
+   @ManyToOne(fetch = FetchType.LAZY)
+   @JoinColumn(name = "user_id")
+    private Users users;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getAccounttype() {
-        return accounttype;
-    }
-
-    public void setAccounttype(String accounttype) {
-        this.accounttype = accounttype;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getAdharnumber() {
-        return adharnumber;
-    }
-
-    public void setAdharnumber(String adharnumber) {
-        this.adharnumber = adharnumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
 }
