@@ -35,8 +35,6 @@ public class Users {
     private String adharnumber;
     @Column(nullable=false)
     private String address;
-    @Column(nullable=false)
-    private String role;
     @Column(nullable = false, length = 20)
     private String Accounttype;
     @Column
